@@ -1,8 +1,9 @@
 def MyChart():
-	date = input('Date: ')
+	import datetime
+	date = datetime.datetime.today()
 	info = input('Info: ')
 	print('{} {}'.format(date,info))
 	f = open('MyHealthChart.txt','a')
-	f.write('{} {}\n'.format(date,info))
+	f.write('{:%Y%m%d%H%M} {}\n'.format(date,info))
 	f.close()
 MyChart()
